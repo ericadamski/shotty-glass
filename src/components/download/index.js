@@ -3,7 +3,7 @@ import domToImage from 'dom-to-image';
 
 import { Button } from './index.styled';
 
-export default ({ name }) => (
+export default ({ name, reset }) => (
   <Button
     onClick={() => {
       const target = document.getElementById('capture');
@@ -25,9 +25,12 @@ export default ({ name }) => (
         link.download = `${name}-${Date.now()}.png`;
         link.href = dataUrl;
         link.click();
+        reset();
       });
     }}
   >
-    ⬇
+    <span role="img" aria-label="download">
+      👇
+    </span>
   </Button>
 );

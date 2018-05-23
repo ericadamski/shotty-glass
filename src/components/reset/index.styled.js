@@ -18,7 +18,7 @@ export const Button = styled.button`
   background: ${colors.text};
   outline: none;
 
-  right: 15px;
+  right: 80px;
   bottom: 15px;
 
   &:active,

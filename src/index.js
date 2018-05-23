@@ -24,7 +24,10 @@ class Page extends Component {
     return (
       <Wrapper>
         {this.state.file ? (
-          <Chooser file={this.state.file} />
+          <Chooser
+            file={this.state.file}
+            reset={() => this.setState({ file: null })}
+          />
         ) : (
           <DropZone onDrop={this.onDrop.bind(this)} />
         )}

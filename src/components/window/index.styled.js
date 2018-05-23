@@ -1,16 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from '../../utils/colors';
 import { Controls as C } from '../svg/controls';
 
 const ControlContainer = styled.div`
   position: absolute;
-  padding: 10px 15px;
+  padding: 5px 7.5px;
 `;
 
 export const Img = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
 `;
 
 export const Controls = () => (
@@ -33,11 +33,20 @@ export const ImgContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  margin-top: 35px;
+  margin-top: 29px;
 `;
 
 export const Wrapper = styled.div`
-  width: ${({ width }) => `${Math.min(width, 800 * 0.8)}px` || '80%'};
-  height: ${({ height }) => `${Math.min(height, 600 * 0.8) + 35}px` || '80%'};
+  width: ${({ width }) => `${Math.min(width, 800 * 0.85)}px` || '80%'};
+  height: ${({ height }) => `${Math.min(height, 600 * 0.85) + 10}px` || '80%'};
   position: relative;
+
+  ${Img} {
+    ${({ width, height }) =>
+      height > width &&
+      css`
+        height: 100%;
+        width: auto;
+      `};
+  }
 `;
