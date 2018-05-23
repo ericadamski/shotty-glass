@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { Controls, Wrapper, Window, ImgContainer } from './index.styled';
+import { Controls, Wrapper, Window, ImgContainer, Img } from './index.styled';
 
-export default () => (
-  <Wrapper>
+export default ({ file: { src, width, height } }) => (
+  <Wrapper width={width} height={height}>
     <Controls />
     <Window>
-      <ImgContainer />
+      <ImgContainer>
+        <Img src={src} />
+      </ImgContainer>
     </Window>
   </Wrapper>
 );

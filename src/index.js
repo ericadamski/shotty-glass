@@ -7,14 +7,27 @@ import Chooser from './components/chooser';
 import { Wrapper } from './index.styled';
 
 class Page extends Component {
-  state = { files: [] };
+  state = { file: null };
+
+  onDrop([file]) {
+    const r = new FileReader();
+    const i = new Image();
+
+    i.name = file.name.split('.')[0] || 'anonymous';
+
+    r.onloadend = e => (i.src = r.result);
+    i.onload = () => this.setState({ file: i });
+    r.readAsDataURL(file);
+  }
 
   render() {
-    /*<DropZone />*/
-
     return (
       <Wrapper>
-        <Chooser />
+        {this.state.file ? (
+          <Chooser file={this.state.file} />
+        ) : (
+          <DropZone onDrop={this.onDrop.bind(this)} />
+        )}
       </Wrapper>
     );
   }

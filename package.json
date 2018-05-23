@@ -5,6 +5,7 @@
   "main": "index.js",
   "homepage": "./",
   "dependencies": {
+    "dom-to-image": "^2.6.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-dropzone": "^4.2.10",

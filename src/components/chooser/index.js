@@ -7,8 +7,8 @@ export default class Chooser extends Component {
   render() {
     return (
       <Fragment>
-        <View />
-        <Download />
+        <View file={this.props.file} />
+        <Download name={this.props.file.name} />
       </Fragment>
     );
   }

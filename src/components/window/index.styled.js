@@ -8,6 +8,11 @@ const ControlContainer = styled.div`
   padding: 10px 15px;
 `;
 
+export const Img = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
 export const Controls = () => (
   <ControlContainer>
     <C />
@@ -32,7 +37,7 @@ export const ImgContainer = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 80%;
-  height: 80%;
+  width: ${({ width }) => `${Math.min(width, 800 * 0.8)}px` || '80%'};
+  height: ${({ height }) => `${Math.min(height, 600 * 0.8) + 35}px` || '80%'};
   position: relative;
 `;
