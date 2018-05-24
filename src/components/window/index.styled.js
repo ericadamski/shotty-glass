@@ -38,7 +38,8 @@ export const ImgContainer = styled.div`
 
 export const Wrapper = styled.div`
   width: ${({ width }) => `${Math.min(width, 800 * 0.85)}px` || '80%'};
-  height: ${({ height }) => `${Math.min(height, 600 * 0.85) + 10}px` || '80%'};
+  height: ${({ width, height }) =>
+    `${Math.min(width, 800 * 0.85) * (height / width)}px` || '80%'};
   position: relative;
 
   ${Img} {
