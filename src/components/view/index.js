@@ -3,8 +3,8 @@ import React from 'react';
 import Window from '../window';
 import { Wrapper } from './index.styled';
 
-export default ({ file }) => (
+export default ({ file, dark }) => (
   <Wrapper id="capture">
-    <Window file={file} />
+    <Window file={file} dark={dark} />
   </Wrapper>
 );

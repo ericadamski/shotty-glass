@@ -29,11 +29,28 @@ export const Button = styled.button`
   }
 `;
 
-export const Tooltip = styled.div`
+export const Tooltip = styled.span`
   position: absolute;
   background-color: ${colors.text};
-  padding: 2.5px 3px;
+  padding: 3px 2.5px;
+  line-height: 16px;
   font-size: 12px;
   border-radius: 3px;
-  top: -5px;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 16px;
+  transition-delay: 0.2s;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+`;
+
+export const Wrapper = styled.div`
+  position: relative;
+
+  &:hover {
+    ${Tooltip} {
+      opacity: 1;
+    }
+  }
 `;
