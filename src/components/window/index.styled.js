@@ -5,7 +5,7 @@ import { Controls as C } from '../svg/controls';
 
 const ControlContainer = styled.div`
   position: absolute;
-  padding: 5px 7.5px;
+  padding: 5px 7px;
 `;
 
 export const Img = styled.img`
@@ -33,7 +33,7 @@ export const ImgContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  margin-top: 29px;
+  margin-top: 25px;
 `;
 
 export const Wrapper = styled.div`

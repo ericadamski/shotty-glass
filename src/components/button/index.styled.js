@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import colors from '../../utils/colors';
 
 export const Button = styled.button`
+  position: relative;
   border-radius: 100%;
-  position: fixed;
   background-image: none;
   border: none;
   height: 50px;
@@ -17,9 +17,7 @@ export const Button = styled.button`
   color: ${colors.rgba.grey};
   background: ${colors.text};
   outline: none;
-
-  right: 15px;
-  bottom: 15px;
+  margin: 0 5px;
 
   &:active,
   &:focus {
@@ -29,4 +27,13 @@ export const Button = styled.button`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const Tooltip = styled.div`
+  position: absolute;
+  background-color: ${colors.text};
+  padding: 2.5px 3px;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -5px;
 `;

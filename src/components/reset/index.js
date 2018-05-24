@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Button } from './index.styled';
+import Button from '../button';
 
 export default ({ reset }) => (
-  <Button onClick={reset}>
+  <Button click={reset} tip="Upload New File">
     <span role="img" aria-label="reset">
       🙅‍
     </span>

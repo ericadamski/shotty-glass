@@ -1,11 +1,12 @@
 import React from 'react';
 import domToImage from 'dom-to-image';
 
-import { Button } from './index.styled';
+import Button from '../button';
 
 export default ({ name, reset }) => (
   <Button
-    onClick={() => {
+    tip="Download"
+    click={() => {
       const target = document.getElementById('capture');
       const config = {
         style: {
