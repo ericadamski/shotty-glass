@@ -1,16 +1,32 @@
 {
   "name": "shot-glass",
+  "description": "A sophisticated way to make screenshots look good.",
   "version": "0.1.0",
-  "private": true,
-  "main": "index.js",
+  "license": "MIT",
+  "author": "Eric Adamski <er.adamski@gmail.com>",
+  "repository": "git@github.com:ericadamski/shotty-glass.git",
+  "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
     "dom-to-image": "^2.6.0",
+    "electron-is-dev": "^0.3.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-dropzone": "^4.2.10",
     "react-scripts": "1.1.4",
     "styled-components": "^3.2.6"
+  },
+  "build": {
+    "appId": "io.atom.electron.shotglass",
+    "productName": "Shot Glass",
+    "extraMetadata": "build/electron.js",
+    "files": ["build/**/*", "node_modules/**/*", "package.json"],
+    "mac": {
+      "icon": "public/icons/icon.png"
+    },
+    "publish": {
+      "provider": "github"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,18 +34,23 @@
     "test": "react-scripts test --env=jsdom",
     "precommit": "pretty-quick",
     "electron": "electron .",
-    "package": "electron-packager ./ --platform linux --arch x64 --out dist/",
-    "deb64":
-      "electron-installer-debian --src dist/shot-glass-linux-x64/ --dest dist/installers/ --arch amd64 --config build.config.json",
-    "dev": "nf start"
+    "electron-pack": "build -c.extraMetadata.main=build/electron.js",
+    "electron-release":
+      "build -c.extraMetadata.main=build/electron.js --publish=always",
+    "preelectron-pack": "yarn build",
+    "preelectron-release": "yarn build",
+    "dev":
+      "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "devDependencies": {
-    "electron": "^2.0.1",
+    "concurrently": "^3.5.1",
+    "electron": "^2.0.2",
+    "electron-builder": "^20.14.7",
     "electron-installer-debian": "^0.8.1",
     "electron-packager": "^12.1.0",
-    "foreman": "^3.0.0",
     "husky": "^0.14.3",
     "prettier": "^1.12.1",
-    "pretty-quick": "^1.5.1"
+    "pretty-quick": "^1.5.1",
+    "wait-on": "^2.1.0"
   }
 }
