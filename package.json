@@ -11,6 +11,7 @@
     "dom-to-image": "^2.6.0",
     "electron-is-dev": "^0.3.0",
     "react": "^16.3.2",
+    "react-color": "^2.14.1",
     "react-dom": "^16.3.2",
     "react-dropzone": "^4.2.10",
     "react-scripts": "1.1.4",
