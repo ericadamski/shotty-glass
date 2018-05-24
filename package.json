@@ -18,10 +18,15 @@
     "test": "react-scripts test --env=jsdom",
     "precommit": "pretty-quick",
     "electron": "electron .",
+    "package": "electron-packager ./ --platform linux --arch x64 --out dist/",
+    "deb64":
+      "electron-installer-debian --src dist/shot-glass-linux-x64/ --dest dist/installers/ --arch amd64 --config build.config.json",
     "dev": "nf start"
   },
   "devDependencies": {
     "electron": "^2.0.1",
+    "electron-installer-debian": "^0.8.1",
+    "electron-packager": "^12.1.0",
     "foreman": "^3.0.0",
     "husky": "^0.14.3",
     "prettier": "^1.12.1",

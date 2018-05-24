@@ -1,0 +1,10 @@
+{
+  "src": "dist/shot-glass-linux-x64/",
+  "dest": "dist/installers/",
+  "icon": "public/1f4f8.png",
+  "name": "ShotGlass",
+  "description": "A sophisticated way to make screenshots look good.",
+  "arch": "x64",
+  "maintainer": "Eric Adamski <er.adamski@gmail.com>",
+  "homepage": "https://github.com/ericadamski/shot-glass"
+}

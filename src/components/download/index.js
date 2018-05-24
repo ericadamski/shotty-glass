@@ -24,7 +24,7 @@ export default ({ name, reset }) => (
         const link = document.createElement('a');
         link.download = `${name}-${Date.now()}.png`;
         link.href = dataUrl;
-        link.click();
+        link.dispatchEvent(new MouseEvent('click'));
         reset();
       });
     }}

@@ -19,13 +19,19 @@ function createWindow() {
     process.env.NODE_ENV !== 'production'
       ? process.env.ELECTRON_START_URL
       : url.format({
-          pathname: path.join(__dirname, 'index.html'),
+          pathname: path.join(__dirname, 'build', 'index.html'),
           protocol: 'file:',
           slashes: true,
         });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(uri);
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, 'build', 'index.html'),
+      protocol: 'file:',
+      slashes: true,
+    })
+  );
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
