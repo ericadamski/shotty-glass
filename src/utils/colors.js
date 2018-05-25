@@ -1,7 +1,7 @@
 /* Coolors Exported Palette - coolors.co/3891a6-4c5b5c-fde74c-db5461-e3655b */
 export default {
   text: Object.assign('#fafaff'),
-  window: Object.assign('#f6f6f6'),
+  window: Object.assign('#f6f6f6', { dark: '#1d1e21' }),
   hsla: {
     blue: Object.assign('hsla(191%, 50%, 44%, 1)'),
     grey: Object.assign('hsla(184%, 10%, 33%, 1)'),

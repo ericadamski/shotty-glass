@@ -3,8 +3,8 @@ import React from 'react';
 import Button from '../button';
 
 export default ({ reset }) => (
-  <Button click={reset} tip="Upload New File">
-    <span role="img" aria-label="reset">
+  <Button click={reset} tip="Reset">
+    <span role="img" aria-label="upload new file">
       🙅‍
     </span>
   </Button>

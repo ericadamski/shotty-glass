@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Button, Tooltip } from './index.styled';
+import { Button, Tooltip, Wrapper } from './index.styled';
 
 export default ({ className, children, click, tip }) => (
-  <Button className={className} onClick={click}>
+  <Wrapper>
     {tip && <Tooltip>{tip}</Tooltip>}
-    {children}
-  </Button>
+    <Button className={className} onClick={click}>
+      {children}
+    </Button>
+  </Wrapper>
 );

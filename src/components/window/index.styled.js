@@ -22,7 +22,8 @@ export const Controls = () => (
 export const Window = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${colors.window};
+  background-color: ${({ dark }) =>
+    dark ? colors.window.dark : colors.window};
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px;
   overflow: hidden;
