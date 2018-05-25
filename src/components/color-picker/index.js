@@ -1,12 +1,53 @@
 import React from 'react';
-import domToImage from 'dom-to-image';
+import { CustomPicker } from 'react-color';
+import {
+  CircleContainer,
+  HexInput,
+  HexLabel,
+  HexInputContainer,
+} from './index.styled';
 
-import Button from '../button';
+import { isHexColor } from 'validator';
 
-export default ({ name, reset }) => (
-  <Button tip="Background Color" click={() => {}}>
-    <span role="img" aria-label="download">
-      🌈
-    </span>
-  </Button>
-);
+import { CirclePicker } from 'react-color';
+import { EditableInput } from 'react-color/lib/components/common';
+
+export default class MyColorPicker extends React.Component {
+  state = { color: this.props.color || '#E3655B' };
+
+  onColorChangeHandler = ({ hex }) => {
+    const { onColorChange } = this.props;
+
+    isHexColor(hex) && onColorChange(hex);
+    this.setState({ color: hex });
+  };
+
+  onInputHandler = e => {
+    const hexString = `#${e.target.value}`;
+    this.onColorChangeHandler({ hex: hexString });
+  };
+
+  render() {
+    const { closePicker } = this.props;
+    const { color } = this.state;
+    return (
+      <div>
+        <CirclePicker
+          onChange={color => {
+            this.onColorChangeHandler(color);
+            closePicker();
+          }}
+          onSwatchHover={this.onColorChangeHandler}
+        />
+        <HexInputContainer>
+          <HexLabel>{'#'}</HexLabel>
+          <HexInput
+            onChange={this.onInputHandler}
+            value={color.replace('#', '')}
+            background={isHexColor(color) ? color : '#000'}
+          />
+        </HexInputContainer>
+      </div>
+    );
+  }
+}
