@@ -27,6 +27,10 @@ export default class MyColorPicker extends React.Component {
     this.onColorChangeHandler({ hex: hexString });
   };
 
+  onKeyPressHandler = ({ key }) => {
+    if (key === 'Enter') this.props.closePicker();
+  };
+
   render() {
     const { closePicker } = this.props;
     const { color } = this.state;
@@ -45,6 +49,7 @@ export default class MyColorPicker extends React.Component {
             onChange={this.onInputHandler}
             value={color.replace('#', '')}
             background={isHexColor(color) ? color : '#000'}
+            onKeyPress={this.onKeyPressHandler}
           />
         </HexInputContainer>
       </div>

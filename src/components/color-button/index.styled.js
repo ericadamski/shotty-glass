@@ -7,7 +7,6 @@ export const PickerContainer = styled.div`
   bottom: 100px;
   right: 45px;
   border-radius: 5px;
-
   background-color: white;
 
   &:after {

@@ -11,23 +11,26 @@ export default class ColorButton extends Component {
     this.setState({ showPicker: !this.state.showPicker });
 
   render() {
+    const { color, onColorChange } = this.props;
+    const { showPicker } = this.state;
     return (
       <Container>
-        {this.state.showPicker && (
+        {showPicker && (
           <PickerContainer>
             <CustomPicker
-              onColorChange={this.props.onColorChange}
+              onColorChange={onColorChange}
               closePicker={this.setShowPickerState}
-              color={this.props.color}
+              color={color}
             />
           </PickerContainer>
         )}
         <Button
+          tip={showPicker ? null : 'BG color'}
           click={() => {
             this.setShowPickerState();
           }}
         >
-          <span role="img" aria-label="download">
+          <span role="img" aria-label="choose background color">
             🌈
           </span>
         </Button>

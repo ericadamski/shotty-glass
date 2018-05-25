@@ -32,6 +32,9 @@ export const Button = styled.button`
 export const Tooltip = styled.span`
   position: absolute;
   background-color: ${colors.text};
+  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 3px 2.5px;
   line-height: 16px;
   font-size: 12px;
