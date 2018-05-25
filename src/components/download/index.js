@@ -22,7 +22,6 @@ export default ({ name, reset }) => (
       };
 
       domToImage.toPng(target, config).then(function(dataUrl) {
-        console.log(dataUrl);
         const link = document.createElement('a');
         link.download = `${name}-${Date.now()}.png`;
         link.href = dataUrl;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import CustomPicker from '../color-picker';
 import Button from '../button';
@@ -14,7 +14,7 @@ export default class ColorButton extends Component {
     const { color, onColorChange } = this.props;
     const { showPicker } = this.state;
     return (
-      <Container>
+      <Fragment>
         {showPicker && (
           <PickerContainer>
             <CustomPicker
@@ -34,7 +34,7 @@ export default class ColorButton extends Component {
             🌈
           </span>
         </Button>
-      </Container>
+      </Fragment>
     );
   }
 }

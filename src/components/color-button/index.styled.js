@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
 export const PickerContainer = styled.div`
   position: fixed;
   padding: 8px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { CustomPicker } from 'react-color';
 import {
   CircleContainer,
@@ -12,7 +12,7 @@ import { isHexColor } from 'validator';
 import { CirclePicker } from 'react-color';
 import { EditableInput } from 'react-color/lib/components/common';
 
-export default class MyColorPicker extends React.Component {
+export default class MyColorPicker extends Component {
   state = { color: this.props.color || '#E3655B' };
 
   onColorChangeHandler = ({ hex }) => {
@@ -35,7 +35,7 @@ export default class MyColorPicker extends React.Component {
     const { closePicker } = this.props;
     const { color } = this.state;
     return (
-      <div>
+      <Fragment>
         <CirclePicker
           onChange={color => {
             this.onColorChangeHandler(color);
@@ -52,7 +52,7 @@ export default class MyColorPicker extends React.Component {
             onKeyPress={this.onKeyPressHandler}
           />
         </HexInputContainer>
-      </div>
+      </Fragment>
     );
   }
 }
